@@ -10,9 +10,8 @@ func main() {
 	cat1.Name = "Test1"
 	cat2Index := bayes.Index{}
 	cat2Index.Name = "Test2"
-	goodIndex = bayes.Train(goodIndex, strings.Split("Some chunk of text"," "))	
-	badIndex = bayes.Train(badIndex, strings.Split("A different chunk of text"," "))	
+	goodIndex = bayes.Train(goodIndex, strings.Split("Some chunk of text"," "))
+	badIndex = bayes.Train(badIndex, strings.Split("A different chunk of text"," "))
 	result := bayes.Classify(strings.Split("Text To Classify"," "), goodIndex, badIndex, 0.005)
 	fmt.Printf(result)
-	fmt.Sprintf("cat1Index.M = %v, cat2Index.M = %v", goodIndex.M, badIndex.M)
 }
